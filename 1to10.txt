@@ -1,0 +1,570 @@
+1a.html
+<html>
+<head><title>Main Page</title>
+</head>
+<body style="background-color:violet;">
+<center>
+<h1 style="color:blue;font-size:30pt;">Main Page</h1>
+<br/>
+<ul>
+	<li style="font-size:10pt;font-style:italic;"><a href="1b.html">Registration Page</a></li></br></br>
+	<li style="font-size:10pt;font-style:italic;"><a href="1c.html">Log in Page</a></li></br></br>
+	<li style="font-size:10pt;font-style:italic;"><a href="1d.html">Order Page</a></li></br></br>
+	<li style="font-size:10pt;font-style:italic;"><a href="1e.html">Checkout Page</a></li></br></br>
+</ul>
+</center>
+</body>
+</html>
+
+1b.html
+<html>
+<head><title>Registration Page</title>
+
+</head>
+<body style="background-color:grey;background-size:100%;">
+<center>
+<h1 style="color:red;font-size:30pt;">Registration Page</h1>
+<br/>
+<form style="font-size:10pt;font-style:italic;">
+	Name:<input type="text"/><br/><br/>
+	Email ID:<input type="text"/><br/><br/>
+	Mobile No:<input type="text"/><br/><br/>
+	<input type="submit" value="Submit"/><br/><br/><br/><br/>
+<a href="1a.html">Go to Main page</a><br>
+</center>
+</body>
+</html>
+
+1c.html
+<html>
+<head><title>Log in Page</title>
+</head>
+<body style="background-color:aqua;">
+<center>
+<h1 style="color:yellow;font-size:30pt;">Log in Page</h1>
+<br/>
+<form>
+	User Name:<input type="text"/><br/><br/>
+	Password:<input type="password"/><br/><br/>
+	<p>Forgot password? Please contact service admin.</p>
+	<input type="submit" value="Submit"/><br/><br/><br/><br/>
+<a href="1a.html">Go to Main page</a><br>
+</center>
+</body>
+</html>
+
+1d.html
+<html>
+<head><title>Order Page</title>
+</head>
+<body style="background-color:gray;">
+<center>
+<h1 style="color:violet;font-size:30pt;font-style:italic;">Order Page</h1>
+<br/>
+<ul style="color:red;font-size:10pt;font-style:italic;">
+	<li>Harry Potter series - J K Rowling</li></br>
+	<li>Theory of Everything - Stefen Hawking</li></br>
+	<li>Data Structure - A M Padma Reddy</li></br>
+</ul>
+<a href="1a.html">Go to Main page</a><br>
+</center>
+</body>
+</html>
+
+1e.html
+<html>
+<head><title>Checkout Page</title>
+
+</head>
+<body style="background-color:black;background-size:100%;">
+<center>
+<h1 style="color:green;font-size:30pt;">Checkout Page</h1>
+<br/>
+<form style="color:white;font-size:10pt;font-style:italic;">
+<hr/>
+	Card No:<input type="text"/><br/><br/>
+	Name on Card:<input type="text"/><br/><br/>
+	Expiry Date: <select>
+	<option>2020</option>
+	<option>2021</option>
+	<option>2022</option>
+	<option>2023</option>
+	<option>2024</option>
+	<option>2025</option>
+	</select><br/><br/>
+	CVV No:<input type="number"/><br/><br/>
+	Amount Paid:<input type="number"/><br/><br/>
+	<input type="submit" value="Submit"/><br/><br/><br/><br/>
+<a href="1a.html">Go to Main page</a><br>
+</center>
+</body>
+</html>
+-------------------------------------------------------------------------------------------------------------------------
+
+2.html
+<html>
+<head><title>Student Registration Page</title>
+<head>
+<body style="background-color:grey;">
+	<div align="left">	
+	<h1 style="color:red;font-size:30pt;">Student Registration Page</h1>
+	<form style="font-size:10pt;font-style:italic;">
+		<label for="name">Enter Name: </label>
+		<input type="text" id="name"/><br/><br/>
+		<label for="dob">Date of Birth: </label>
+		<input type="number" id="dob"/><br/><br/>
+		<label for="branch">Enter Branch: </label>
+		<input type="number" id="branch"/><br/><br/><hr/>
+		<label for="sem">Enter Semester: </label>
+		<input type="number" id="sem"/><br/><br/>
+		<label for="doj">Date of joining: </label>
+		<input type="number" id="doj"/><br/><br/>
+		<label for="uni">Enter University: </label>
+		<input type="text" id="uni"/><br/><br/><hr/>
+		<label for="mobile">Enter Phone no: </label>
+		<input type="text" id="mobile"/><br/><br/>
+		<label for="email_id">Enter Email ID: </label>
+		<input type="email" id="email_id"/><br/><br/><hr/>	
+	</form>
+	<button onclick="validate()">Submit</button>
+	<p>	
+		Result: <span id="result"></span>
+	</p>
+	</div>
+</body>
+<script>
+function validate()
+{
+	var result_text=document.getElementById("result");
+	var dob=document.getElementById("dob").value;
+	var birth_year=parseInt(dob.substring(6,10));
+	var doj=document.getElementById("doj").value;
+	var join_year=parseInt(doj.substring(6,10));
+	var email=document.getElementById("email_id").value;
+	var branch=document.getElementById("branch").value;
+	var mobile=document.getElementById("mobile").value;
+	if((join_year-birth_year)<17)
+	{	
+		result_text.innerHTML="Too young to start college.";
+		return;
+	}
+	if(branch.search(/(CSE|ECE|ME|EEE|BCA|MCA)/i)==-1)
+	{
+		result_text.innerHTML="Invalid branch.";
+		return;
+	}
+	if(email.search(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)==-1)
+	{
+		result_text.innerHTML="Invalid email address.";
+		return;
+	}
+	if(mobile.search(/^[0-9]+$/)==-1||mobile.length!=10)
+	{
+		result_text.innerHTML="Invalid mobile number.";
+		return;
+	}
+	alert('Successfully Transmitted data!');
+	result_text.innerHTML="Success!";
+}
+</script>
+</html>
+
+-------------------------------------------------------------------------------------------------------
+
+3.html
+<html>
+<head><title>Validate SRN</title></head>
+<script>
+	function validate()
+	{
+		var srn=document.getElementById("srn_check").value;
+		if(srn.search(/^[A-Za-z]+[0-9]+[0-9]+[A-Za-z]+[A-Za-z]+[0-9]+[0-9]+[0-9]+$/)==-1||srn.length!=8)
+		{
+			document.write("Invalid SRN");
+			return;
+		}
+		document.write("Success!");
+	}
+</script>
+</head>
+<body style="background-color:grey;">
+	<h1 style="font-size:30pt;color:red;">Please enter following field</h1>
+	<form style="font-size:10pt;color:blue;">
+		Enter SRN:<input type="text" id="srn_check"/><br/><br/><hr/>
+		<input type="submit" value="Submit" onclick="validate()"/>
+	</form>		
+</body>
+</html>
+
+----------------------------------------------------------------------------------------------------
+
+4.xml
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="4.css"?>
+<catalog>
+<student>
+<name>Rami</name>
+<srn>R16CS223</srn>
+<branch>CSE</branch>
+<sem>7</sem>
+<uni>REVA Uni</uni>
+<country>India</country>
+</student>
+<student>
+<name>Suri</name>
+<srn>R16CS227</srn>
+<branch>CSE</branch>
+<sem>7</sem>
+<uni>REVA Uni</uni>
+<country>India</country>
+</student>
+<student>
+<name>Avi</name>
+<srn>R16CS229</srn>
+<branch>CSE</branch>
+<sem>7</sem>
+<uni>REVA Uni</uni>
+<country>India</country>
+</student>
+</catalog>
+
+4.css
+catalog
+{
+background-color:#00ffff;
+width:100%
+}
+student
+{
+display:block;
+margin-bottom:30pt;
+margin-left:0pt;
+}
+name
+{
+color:#ff0000;
+display:block;
+font-size:20pt;
+font-style:italic;
+}
+srn,branch,sem,uni,country
+{
+color:#ff00ff;
+display:block;
+font-size:20pt;
+font-style:italic;
+}
+
+-----------------------------------------------------------------------------------------------
+
+5a.xml
+<?xml version = "1.0"?>
+<?xml-stylesheet type="text/css" href="5a.css"?>
+<catalog>
+<ru>
+<b>Books</b>
+<e>Electronics</e>
+<s>Stationaries</s>
+<c>Clothes</c>
+<o>Other</o>
+</ru>
+</catalog>
+
+5a.css
+catalog
+{
+background-color:#000000;
+width:100%;
+}
+ru
+{
+display:block;
+margin-bottom:30pt;
+margin-left:0pt;
+}
+b
+{
+color:#00ff00;
+display:block;
+font-size:20pt;
+font-style:italic;
+}
+e
+{
+color:#ff00ff;
+display:block;
+font-size:20pt;
+font-style:italic;
+}
+s,c,o
+{
+font-size:20pt;
+display:block;
+color:#0000ff;
+font-style:italic;
+}
+
+5b.xml
+<?xml version="1.0"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="RU"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>Stylesheet for 5b.xml</title></head>
+<body style="background-color:grey;width:100%">
+<h1 style="color:violet">Shopping</h1>
+
+<span style="font-style:italic;font-size:10pt;color:blue;">Books:
+</span><xsl:value-of select="b"/><br/>
+
+<span style="font-style:italic;font-size:10pt;color:red;">Electronics:
+</span><xsl:value-of select="e"/><br/>
+
+<span style="font-style:italic;font-size:10pt;color:aqua;">Stationaries:
+</span><xsl:value-of select="s"/><br/>
+
+<span style="font-style:italic;font-size:10pt;color:yellow;">Clothes:
+</span><xsl:value-of select="c"/><br/>
+
+<span style="font-style:italic;font-size:10pt;color:violet;">Other:
+</span><xsl:value-of select="o"/><br/>
+
+</body>
+</html>
+</xsl:template>
+</xsl:stylesheet>
+
+---------------------------------------------------------------------------------------------------------
+
+6.html
+<html>
+<body style="background-color:grey;">
+	<center>
+	<h1 style="color:pink;font-style:italic;">Online Book Details</h1>
+	<form style="color:violet;font-size:10pt;font-style:italic;" action="http://localhost/cgi-bin/6insert.php" method="post">
+	<br/><br/>
+	Title: <input type="text" name="title"/><br/><br/>
+	Author:<input type="text" name="author"/><br/><br/>
+	Publisher:<input type="text" name="publisher"/><br/><br/>
+	<input type="submit" value="Submit"/>
+	</form>
+	</center>
+</body>
+</html>
+	
+6insert.php
+<html>
+<body style="background-color:grey;">
+	<?php
+		$con=mysql_connect("localhost","root","") or die(mysql_error());
+		mysql_select_db("sat") or die(mysql_error());
+		$sql="insert into books(title,author,publisher) values('$_POST[title]','$_POST[author]','$_POST[publisher]')";
+		if(!mysql_query($sql,$con))
+		{
+			die('ERROR: '.mysql_error());
+		}
+	echo "1 record added.";
+	mysql_close($con);
+	?>
+	<center>
+	<br/>
+	<h1 style="color:pink;margin-align:center;font-style:italic;">Search using Title</h1>
+	
+	<br/><br/>
+	<form style="color:white;font-size:10pt;font-style:italic;" action="6result.php" method="post">
+		Title: <input type="text" name="title"/>
+		<input type="submit" value="Submit"/>
+	</form>
+	</center>
+</body>
+</html>
+
+6result.php
+<html>
+<body style="background-color:grey;">
+	
+	<?php
+		$con=mysql_connect("localhost","root","") or die(mysql_error());
+		mysql_select_db("sat") or die(mysql_error());
+		$result=mysql_query("select * from books where title='$_POST[title]'");
+		if(!$result)
+		{
+			echo "There is no record";
+		}
+	echo "<br/><br/><table border='1'><tr><th>Title</th><th>Author</th><th>Publisher</th></tr>";
+	while($row=mysql_fetch_array($result))
+	{
+		echo "<tr>";
+		echo "<td>".$row['title']."</td>";
+		echo "<td>".$row['author']."</td>";
+		echo "<td>".$row['publisher']."</td>";
+		echo "</tr>";
+	}
+	echo "</table>";
+	mysql_close($con);
+	?>
+</body>
+</html>
+
+
+--------------------------------------------------------------------------------------------------------------
+
+7a.html
+<html>
+<head><title>UNIX Command</title></head>
+<body style="background-color:grey;">
+	<form action="http://localhost/cgi-bin/7a.pl" method="post">
+	<center><br><h1 style="color:red;">ENTER UNIX COMMAND TO BE EXECUTED</h1>
+	<input type="text" name="msg"/>
+	<input type="submit" value="Run"/>	
+	</form>
+</body>
+</html>
+
+
+7a.pl
+#!/usr/bin/perl
+use CGI':standard';
+print "content-type:text/html\n\n";
+$c = param('msg');
+system($c);
+
+7b.html
+<html>
+<head><title>NUMBER OF VISITS</title></head>
+<body style="background-color:aqua;">
+	<form action="http://localhost/cgi-bin/7count.pl" method="post">
+	<center><br><h1 style="color:red;">NUMBER OF VISITS</h1>
+	<p>To view the number of visits <input type="submit" value="Click here."/></p>	
+	</form>
+</body>
+</html>
+
+7b.pl
+#!/usr/bin/perl
+use CGI':standard';
+print "content-type:text/html\n\n";
+	$count_file="/var/www/cgi-bin/ru.txt";
+	if(open(FILE,'<'.$count_file))
+	{
+		$no_accesses=<FILE>;
+		close(FILE);
+		if(open(FILE,'>'.$count_file))
+		{
+			$no_accesses++;
+			print FILE $no_accesses;
+			close(FILE);
+			print "No. of visitors: ",$no_accesses;
+		}
+		else
+		{
+			print "[Can't write to data file.]";
+		}
+	}
+	else
+	{
+		print "[Something went wrong.]";
+	}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+8.html
+<html>
+<body style="background-color:grey;">
+	<center>
+	<h1 style="color:red;font-size:15pt;font-style:italic;">Student Database</h1>
+	<br/><br/>
+	<form style="color:whte;font-size:10pt;font-style:italic;" action="http://localhost/cgi-bin/8.pl" method="post">
+		First Name:<input type="text" name="fname"/><br/><br/>
+		Last Name:<input type="text" name="lname"/><br/><br/>
+		Age:<input type="text" name="age"/><br/><br/>
+		Address:<input type="text" name="address"/><br/><br/>
+		Pincode: <input type="text" name="pincode"/><br/><br/>	
+		<input type="submit" value="Submit Details"/>
+	</form>
+	</center>
+</body>
+</html>
+
+8.pl
+#!/usr/bin/perl
+use CGI':standard';
+print "content-type:text/html\n\n";
+	print "<html><title>Result of insert operation</title>";
+	use DBI;
+	$dbh=DBI->connect("DBI:mysql:sat","root","");
+	$fname=param("fname");
+	$lname=param("lname");
+	$age=param("age");
+	$address=param("address");
+	$pincode=param("pincode");
+	$qh=$dbh->prepare("insert into stu values('$fname','$lname','$age','$address','$pincode')");
+	$qh->execute();
+	$qh=$dbh->prepare("select * from stu");
+	$qh->execute();	
+	print "<table border='1'><tr><th>First Name</th><th>Last Name</th><th>Age</th><th>Address</th><th>Pincode</th></tr>";
+	while(($fname,$lname,$age,$address,$pincode)=$qh->fetchrow())
+	{
+		print "<tr><td>$fname</td><td>$lname</td><td>$age</td><td>$address</td><td>$pincode</td></tr>";
+	}
+	print "</table>";
+	$qh->finish();
+	$dbh->disconnect();
+	print "</html>";
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+9.html
+<html>
+<head><title>COOKIE PROGRAM</title></head>
+<body style="background-color:grey;">
+	<form action="http://localhost/cgi-bin/9.php" method="post">
+		<p>The last visited time was <input type="submit" value="Show now"/></p>	
+	</form>
+</body>
+</html>
+
+
+9.php
+<?php
+$present_time=date("H:i:s-m/d/y");
+$expiry=60*24*60+time();
+setcookie("Lastvisit",$present_time,$expiry);
+if(isset($_COOKIE["Lastvisit"]))
+{
+echo "<br/><br/>Cookie has been set.";
+echo "<br/><br/>The current time of the system is ";
+echo $present_time;
+echo "<br/><br/>The Last visited time and date ";
+echo $_COOKIE["Lastvisit"];
+}
+else{echo "<br/><br/>You have some old cookies.Get rid of them.<br/><br/>";}
+?>
+
+---------------------------------------------------------------------------------------------------------
+
+10.html
+<html>
+<head><title>SESSION PROGRAM</title></head>
+<body style="background-color:grey;">
+	<form action="http://localhost/cgi-bin/10.php" method="post">
+	<p>To see page views count in session <input type="submit" value="Click Here"/></p>
+	</form>
+</body>
+</html>
+
+10.php
+<?php
+session_start();
+if(!isset($_SESSION))
+{
+$_SESSION["count"]=1;
+echo "<p>Counter initialized</p>\n";
+}
+else
+{$_SESSION["count"]++;}
+echo "<p>This page has been viewed <b>$_SESSION[count]</b> times.</p>";
+echo "<p>Reload this page to increment</p>";
+?>
+
+-------------------------------------------------------------------------------------------------------
